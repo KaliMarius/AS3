@@ -1,0 +1,42 @@
+footer {
+    position: relative;
+    z-index: 999;
+    text-align: center;
+  }
+
+footer .seats-img {
+    background-image: url("../../assets/footer/seats.png");
+    background-repeat: repeat-x;
+    background-position: center bottom;
+    left: 0;
+    bottom: -145px;
+    // bottom: -80px;
+    position: fixed;
+    height: 200px;
+    width: 100%;
+}
+  
+footer .contact {
+    position: fixed;
+    bottom: -10px;
+    left: 49%;
+    transform: translateX(-50%);
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+}
+
+footer ul li {
+    color: #EEE;
+    width: 80px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+footer ul li a {
+    font-size: x-small;
+}
