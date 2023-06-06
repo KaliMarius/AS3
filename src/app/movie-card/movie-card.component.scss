@@ -1,0 +1,15 @@
+.col-sm-6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+
+.blur {
+    position: relative;
+    z-index: -1;
+    transform: translateY(-100%); 
+    filter: blur(16px);
+    filter: brightness(4);
+    -webkit-filter: blur(16px);
+    margin-bottom: -55%;
+}

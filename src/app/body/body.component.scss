@@ -1,4 +1,14 @@
-
+.background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 110%;
+    min-height: 100vh;
+    background-image: url("../../assets/body/stars.gif");
+    background-size: cover;
+    background-repeat: repeat-y;
+    z-index: -999;
+}
 
 .askText {
     position: relative;
