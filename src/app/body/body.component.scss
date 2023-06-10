@@ -2,11 +2,11 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 110%;
+    width: 100%;
     min-height: 100vh;
     background-image: url("../../assets/body/stars.gif");
     background-size: cover;
-    background-repeat: repeat-y;
+    background-repeat: repeat;
     z-index: -999;
 }
 
@@ -27,4 +27,20 @@ button {
     color: white;
     background: transparent;
     border-color: #999;
+}
+
+.col-sm-6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+
+.blur {
+    position: relative;
+    z-index: -1;
+    transform: translateY(-100%); 
+    filter: blur(16px);
+    filter: brightness(4);
+    -webkit-filter: blur(16px);
+    margin-bottom: -55%;
 }
