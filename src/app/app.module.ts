@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
-import { BodyContainerComponent } from './body-container/body-container.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 
 @NgModule({
@@ -16,7 +15,6 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
     HeaderComponent,
     BodyComponent,
     FooterComponent,
-    BodyContainerComponent,
     MovieCardComponent
   ],
   imports: [
