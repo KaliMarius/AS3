@@ -1,7 +1,6 @@
-.col-sm-6 {
+.col-sm-6, .col-md-4, .col-lg-3 {
     margin-top: 10px;
     margin-bottom: 10px;
-    
 }
 
 .blur {
@@ -12,4 +11,8 @@
     filter: brightness(4);
     -webkit-filter: blur(16px);
     margin-bottom: -55%;
+}
+
+a {
+    display: inline-block;
 }
