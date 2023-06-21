@@ -8,6 +8,9 @@ import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
+import { SearchResultsComponent } from './search-result/search-result.component';
+import { MainPageComponent } from './main-page/main-page.component';
+import { TrendsPageComponent } from './trends-page/trends-page.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
     HeaderComponent,
     BodyComponent,
     FooterComponent,
-    MovieCardComponent
+    MovieCardComponent,
+    SearchResultsComponent,
+    MainPageComponent,
+    TrendsPageComponent
   ],
   imports: [
     BrowserModule,

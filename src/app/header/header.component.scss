@@ -104,3 +104,7 @@ header input[type="text"]:hover {   /*Suchfeld bei drüber hovern*/
 header input[type="text"]:focus {
     opacity: 0.9;
 }
+
+button {
+    visibility: hidden;
+}

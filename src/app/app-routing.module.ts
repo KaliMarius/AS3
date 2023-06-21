@@ -8,3 +8,9 @@ const routes: Routes = [];
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+// TODO: Routing beenden für alle neuen Komponenten:
+//   - Body aufräumen (nur noch routing)
+//   - neue Komponenten erstellen für Kategorien
+//   - Alle Komponenten Routing Kompatibel machen
+//   - interfaces nutzen / eventuell umbauen

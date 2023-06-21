@@ -14,8 +14,8 @@
                     </li>
                     <li>
                         <form>
-                            <input type="text" placeholder="Suche..." onkeydown="clearPage(event)">
-                            <script src="./search.js"></script>
+                            <input type="text" placeholder="Suche..." #searchInput> 
+                            <button (click)="search(searchInput.value)">Suchen</button>
                         </form>
                     </li>
                 </ul> 
