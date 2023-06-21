@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -6,23 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  API_KEY = '0f64fe97c07143eb0beeefb7beb2cd3a';
-  searchText = '';
+  constructor(private router: Router) { }
 
-  search(searchText: string): void {
-  
-    const value = searchText.trim();
-
-    if (value) {
-      const encodedSearchText = value.replace(/\s+/g, '+');
-      console.log(encodedSearchText);
-
-      setTimeout(() => {
-        window.open('searchResults.html?search=' + encodeURIComponent(encodedSearchText), '_self');
-      }, 100);
-    }
-  
+  search(searchValue: string) {
+    this.router.navigate(['/suchergebnisse', searchValue]);
   }
 }
-
-// TODO: irgendwie noch die tatsächliche Suche fertig schreiben

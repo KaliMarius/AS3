@@ -2,9 +2,9 @@
     <div class="row">
         <div class="col-sm-10">
             <div class="column-header">
-                <ul>
-                    <li><a href="ParralexTrailers.html"> Startseite </a></li>
-                    <li><a href="Trends.html"> Trends </a></li>
+                <ul> 
+                    <li><a routerLink="/startseite"> Startseite </a></li>
+                    <li><a routerLink="/trends"> Trends </a></li>
                     <li>
                         <a href="#"> Kategorien </a>
                         <ul>
@@ -14,8 +14,8 @@
                     </li>
                     <li>
                         <form>
-                            <input type="text" placeholder="Suche..." #searchInput> 
-                            <button (click)="search(searchInput.value)">Suchen</button>
+                            <input type="text" placeholder="Suche..." 
+                            (keydown.enter)="search(searchInput.value)" #searchInput>
                         </form>
                     </li>
                 </ul> 

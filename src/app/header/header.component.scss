@@ -108,3 +108,17 @@ header input[type="text"]:focus {
 button {
     visibility: hidden;
 }
+
+@media (max-width: 800px) {
+    
+    header ul {     /*Liste links*/
+        transform: translateX(-50%);
+        margin-left: -15px;
+    }
+
+    header ul li {      /*Listenelemente links*/
+        list-style: none;
+        margin-right: 1vw;
+    }
+
+}
