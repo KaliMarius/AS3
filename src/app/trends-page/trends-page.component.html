@@ -1,9 +1,5 @@
-<style>
-    p {
-        color: white;
-        text-align-last: center;
-        margin-top: 25%; 
-        font-size: larger;       
-    }
-</style>
-<p>trends coming soon!</p>
+<app-movie-card [movies]="movies"></app-movie-card>
+
+<div class="askText">   
+    <button (click)="getTrends()">Hier klicken für mehr Trends</button>
+</div>
