@@ -29,7 +29,7 @@ export class SearchResultsComponent implements OnInit {
   }
 
   search(searchText: string): void {
-    const apiRequest = `https://api.themoviedb.org/3/search/movie?api_key=${this.API_KEY}&query=${searchText}`;
+    const apiRequest = `https://api.themoviedb.org/3/search/movie?api_key=${this.API_KEY}&sort_by=popularity.desc&with_original_language=en&query=${searchText}`;
   
     this.http.get(apiRequest).subscribe(
       (data: any) => {

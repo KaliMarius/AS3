@@ -3,10 +3,12 @@
         <div class="col-sm-10">
             <div class="column-header">
                 <ul> 
-                    <li><a routerLink="/startseite"> Startseite </a></li>
-                    <li><a routerLink="/trends"> Trends </a></li>
+                    <li><a routerLink="/startseite" [class.active]="currentRoute === '/startseite'"> Startseite </a></li>
+                    <li><a routerLink="/trends" [class.active]="currentRoute === '/trends'"> Aktuell </a></li>
                     <li>
-                        <a href="#"> Kategorien </a>
+                        <p
+                        [class.active]="currentRoute.includes('/movies') || currentRoute.includes('/tv')" 
+                        >Kategorien </p>
                         <ul>
                             <li><a routerLink="/movies"> Filme </a></li>
                             <li><a routerLink="/tv"> Serien </a></li>

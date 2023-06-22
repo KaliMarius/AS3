@@ -49,7 +49,7 @@ export class MainPageComponent {
 
     function doShit(this: MainPageComponent) {
       
-      const apiUrl = 'https://api.themoviedb.org/3/movie/' + this.id + '?api_key=' + this.API_KEY + '&append_to_response=videos';
+      const apiUrl = `https://api.themoviedb.org/3/movie/${this.id}?api_key=${this.API_KEY}&sort_by=popularity.desc&with_original_language=en&append_to_response=videos`;
 
       this.http.get(apiUrl).subscribe(
         (data: any) => {

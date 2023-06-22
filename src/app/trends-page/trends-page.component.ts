@@ -9,6 +9,7 @@ import { forkJoin, skip } from 'rxjs';
   styleUrls: ['./trends-page.component.scss']
 })
 export class TrendsPageComponent implements OnInit{
+  currentYear: number = new Date().getFullYear();
   API_KEY = '0f64fe97c07143eb0beeefb7beb2cd3a';
   errMsg = 'Entschuldigung, zu diesem Film steht uns leider kein Trailer zur Verfügung';
   
@@ -25,8 +26,8 @@ export class TrendsPageComponent implements OnInit{
   }
 
   getTrends(): void {
-    const apiRequest = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&vote_average.gte=9&page=${this.curPage}&&with_original_language=en&api_key=${this.API_KEY}`;
-  
+    const apiRequest = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&primary_release_year=${this.currentYear}&page=${this.curPage}&with_original_language=en&api_key=${this.API_KEY}`;
+
     this.http.get(apiRequest).subscribe(
       (data: any) => {
         const results = data.results;

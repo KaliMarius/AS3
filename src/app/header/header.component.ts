@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  constructor(private router: Router) { }
+  currentRoute!: string;
+
+  constructor(private router: Router) { 
+    this.router.events.subscribe((event: any) => {
+      if (event instanceof NavigationEnd) {
+        this.currentRoute = event.urlAfterRedirects;
+      }
+    });
+  }
 
   search(searchValue: string) {
     let search = 'search' + '=' + searchValue; 
