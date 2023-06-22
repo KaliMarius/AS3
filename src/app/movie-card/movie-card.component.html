@@ -4,6 +4,7 @@
         (click)="openPopUp(movie)">
             <img [src]="movie.imageUrl" class="img-fluid">
             <!-- <div class="blur"><img [src]="movie.imageUrl" class="img-fluid"></div> -->
+            <p *ngIf="movie.title"> {{movie.title}} </p>
         </a>
     </div>
 </div>

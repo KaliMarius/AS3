@@ -54,7 +54,55 @@ export class SearchResultsComponent implements OnInit {
                 var newMovie: Movie = {
                   imageUrl: `https://image.tmdb.org/t/p/original${movieData.poster_path}`,
                   href: videoLink,
-                  notification: note
+                  notification: note,
+                  title: movieData.original_title
+                };
+                this.movies.push(newMovie);
+              },
+              error => {
+                console.log('Fehler beim Laden des Link:', error);
+              }
+            );
+          }          
+        }
+      },
+      error => {
+        console.log('Fehler bei der Suche nach Filmen:', error);
+      }
+    );
+
+    this.searchTvShows(searchText)
+  }
+
+
+  searchTvShows(searchText: string): void {
+    const apiRequest = `https://api.themoviedb.org/3/search/tv?api_key=${this.API_KEY}&query=${searchText}`;
+  
+    this.http.get(apiRequest).subscribe(
+      (data: any) => {
+        const results = data.results;
+                
+        for (var movie of results) {
+          if (movie.poster_path != null) {
+
+            var id = movie.id;
+
+            // get more data for each movie including video link
+            const movieAPILink = `https://api.themoviedb.org/3/tv/${id}?&append_to_response=videos&api_key=${this.API_KEY}`;
+            
+            this.http.get(movieAPILink).subscribe(
+              (movieData: any) => {
+                
+                var videoLink = '#';
+                movieData.videos.results.length > 0 ? videoLink = `https://www.youtube.com/watch?v=${movieData.videos.results[0].key}` : skip;
+                var note = '';
+                videoLink == '#' ? note = this.errMsg : skip;
+
+                var newMovie: Movie = {
+                  imageUrl: `https://image.tmdb.org/t/p/original${movieData.poster_path}`,
+                  href: videoLink,
+                  notification: note,
+                  title: movieData.original_title
                 };
                 this.movies.push(newMovie);
               },

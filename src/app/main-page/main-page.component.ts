@@ -11,12 +11,30 @@ export class MainPageComponent {
   errMsg = 'Entschuldigung, zu diesem Film steht uns leider kein Trailer zur Verfügung';
 
   movies: Movie[] = [
-    // { imageUrl: '../assets/body/Mandalorian.jpg', href: '#', notification: this.errMsg },
-    { imageUrl: '../assets/body/Dune.png', href: '#', notification: this.errMsg },
-    { imageUrl: '../assets/body/Avatar.jpg', href: '#', notification: this.errMsg },
-    // { imageUrl: '../assets/body/Star-Wars.jpg', href: '#', notification: this.errMsg },
-    { imageUrl: '../assets/body/John-Wick.jpg', href: '#', notification: this.errMsg },
-    { imageUrl: '../assets/body/guardians.jpg', href: '#', notification: this.errMsg }
+    { 
+      imageUrl: '../assets/body/Dune.png', 
+      href: 'https://www.youtube.com/watch?v=Way9Dexny3w', 
+      notification: this.errMsg, 
+      title: 'DUNE' 
+    },
+    { 
+      imageUrl: '../assets/body/Avatar.jpg', 
+      href: 'https://www.youtube.com/watch?v=d9MyW72ELq0', 
+      notification: this.errMsg, 
+      title: 'Avatar: The Way of Water' 
+    },
+    { 
+      imageUrl: '../assets/body/John-Wick.jpg', 
+      href: 'https://www.youtube.com/watch?v=qEVUtrk8_B4', 
+      notification: this.errMsg, 
+      title: 'John Wick: Chapter 4' 
+    },
+    { 
+      imageUrl: '../assets/body/guardians.jpg', 
+      href: 'https://www.youtube.com/watch?v=u3V5KDHRQvk', 
+      notification: this.errMsg, 
+      title: 'Guardians of the Galaxy Vol. 3' 
+    }
   ];
 
   id = 11;
@@ -49,7 +67,8 @@ export class MainPageComponent {
             const movie: Movie = {
               imageUrl: imgUrl,
               href: movieUrl,
-              notification: notification
+              notification: notification,
+              title: data.original_title
             };
 
             this.movies.push(movie);

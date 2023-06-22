@@ -46,7 +46,8 @@ export class CategoryTVComponent {
             const movie: Movie = {
               imageUrl: imgUrl,
               href: movieUrl,
-              notification: notification
+              notification: notification,
+              title: data.original_title
             };
 
             this.movies.push(movie);
