@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/startseite', pathMatch: 'full' },
   { path: 'startseite', component: MainPageComponent },
   { path: 'trends', component: TrendsPageComponent },
-  { path: 'suchergebnisse/:searchvalue', component: SearchResultsComponent }
+  { path: 'suchergebnisse/:search', component: SearchResultsComponent }
   // Hier weitere Routen einfügen
 ];
 

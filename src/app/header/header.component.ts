@@ -10,6 +10,7 @@ export class HeaderComponent {
   constructor(private router: Router) { }
 
   search(searchValue: string) {
-    this.router.navigate(['/suchergebnisse', searchValue]);
+    let search = 'search' + '=' + searchValue; 
+    this.router.navigate(['/suchergebnisse', search]);
   }
 }
