@@ -50,12 +50,13 @@ export class SearchResultsComponent implements OnInit {
                 movieData.videos.results.length > 0 ? videoLink = `https://www.youtube.com/watch?v=${movieData.videos.results[0].key}` : skip;
                 var note = '';
                 videoLink == '#' ? note = this.errMsg : skip;
+                var movieTitle = `${movieData.original_title} (${movieData.release_date.split('-')[0]})`;
 
                 var newMovie: Movie = {
                   imageUrl: `https://image.tmdb.org/t/p/original${movieData.poster_path}`,
                   href: videoLink,
                   notification: note,
-                  title: movieData.original_title
+                  title: movieTitle
                 };
                 this.movies.push(newMovie);
               },
@@ -97,12 +98,13 @@ export class SearchResultsComponent implements OnInit {
                 movieData.videos.results.length > 0 ? videoLink = `https://www.youtube.com/watch?v=${movieData.videos.results[0].key}` : skip;
                 var note = '';
                 videoLink == '#' ? note = this.errMsg : skip;
+                var TvTitle = `${movieData.name} (${movieData.last_air_date.split('-')[0]})`;
 
                 var newMovie: Movie = {
                   imageUrl: `https://image.tmdb.org/t/p/original${movieData.poster_path}`,
                   href: videoLink,
                   notification: note,
-                  title: movieData.original_title
+                  title: TvTitle
                 };
                 this.movies.push(newMovie);
               },

@@ -15,25 +15,25 @@ export class MainPageComponent {
       imageUrl: '../assets/body/Dune.png', 
       href: 'https://www.youtube.com/watch?v=Way9Dexny3w', 
       notification: this.errMsg, 
-      title: 'DUNE' 
+      title: 'DUNE (2021)' 
     },
     { 
       imageUrl: '../assets/body/Avatar.jpg', 
       href: 'https://www.youtube.com/watch?v=d9MyW72ELq0', 
       notification: this.errMsg, 
-      title: 'Avatar: The Way of Water' 
+      title: 'Avatar: The Way of Water (2022)' 
     },
     { 
       imageUrl: '../assets/body/John-Wick.jpg', 
       href: 'https://www.youtube.com/watch?v=qEVUtrk8_B4', 
       notification: this.errMsg, 
-      title: 'John Wick: Chapter 4' 
+      title: 'John Wick: Chapter 4 (2023)' 
     },
     { 
       imageUrl: '../assets/body/guardians.jpg', 
       href: 'https://www.youtube.com/watch?v=u3V5KDHRQvk', 
       notification: this.errMsg, 
-      title: 'Guardians of the Galaxy Vol. 3' 
+      title: 'Guardians of the Galaxy Vol. 3 (2023)' 
     }
   ];
 
@@ -63,12 +63,13 @@ export class MainPageComponent {
             if (data.videos.results.length > 0) {
               movieUrl = "https://www.youtube.com/watch?v=" + data.videos.results[0].key;
             }
+            var movieTitle = `${data.original_title} (${data.release_date.split('-')[0]})`;
 
             const movie: Movie = {
               imageUrl: imgUrl,
               href: movieUrl,
               notification: notification,
-              title: data.original_title
+              title: movieTitle
             };
 
             this.movies.push(movie);

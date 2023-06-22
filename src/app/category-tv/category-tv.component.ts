@@ -42,12 +42,13 @@ export class CategoryTVComponent {
             if (data.videos.results.length > 0) {
               movieUrl = "https://www.youtube.com/watch?v=" + data.videos.results[0].key;
             }
+            var TvTitle = `${data.name} (${data.last_air_date.split('-')[0]})`;
 
             const movie: Movie = {
               imageUrl: imgUrl,
               href: movieUrl,
               notification: notification,
-              title: data.original_title
+              title: TvTitle
             };
 
             this.movies.push(movie);

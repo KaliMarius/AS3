@@ -1,7 +1,24 @@
 .col-sm-6, .col-lg-3 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    // display: grid;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+p {
+  color: white;
+  text-align: center;
+  margin-top: 5px;
+  font-size: medium;
+  width: 100%;
 }
 
 // .blur {
@@ -13,14 +30,3 @@
 //     -webkit-filter: blur(16px);
 //     margin-bottom: -55%;
 // }
-
-a {
-    display: inline-flex;
-}
-
-p {
-    color: white;
-    text-align-last: center;
-    margin-top: 5px; 
-    font-size: medium;       
-}

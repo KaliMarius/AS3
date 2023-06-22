@@ -64,6 +64,11 @@ header {
             list-style: none;
             margin-bottom: 10px;
             left: 6vw;
+            width: 50px;
+
+            &:first-child {
+              margin-left: 0;
+            }
   
             a {
               color: #999;
