@@ -1,37 +1,34 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Movie } from '../movie';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-main-page',
-  templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.scss']
+  selector: 'app-category-tv',
+  templateUrl: './category-tv.component.html',
+  styleUrls: ['./category-tv.component.scss']
 })
-export class MainPageComponent {
+export class CategoryTVComponent {
   errMsg = 'Entschuldigung, zu diesem Film steht uns leider kein Trailer zur Verfügung';
 
-  movies: Movie[] = [
-    // { imageUrl: '../assets/body/Mandalorian.jpg', href: '#', notification: this.errMsg },
-    { imageUrl: '../assets/body/Dune.png', href: '#', notification: this.errMsg },
-    { imageUrl: '../assets/body/Avatar.jpg', href: '#', notification: this.errMsg },
-    // { imageUrl: '../assets/body/Star-Wars.jpg', href: '#', notification: this.errMsg },
-    { imageUrl: '../assets/body/John-Wick.jpg', href: '#', notification: this.errMsg },
-    { imageUrl: '../assets/body/guardians.jpg', href: '#', notification: this.errMsg }
-  ];
+  movies: Movie[] = [];
 
-  id = 11;
+  id = 604;
   API_KEY = '0f64fe97c07143eb0beeefb7beb2cd3a';
 
   constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.addContent();
+  }
 
   addContent(): void {
     let requestCounter = 0;
 
     doShit.call(this);
 
-    function doShit(this: MainPageComponent) {
+    function doShit(this: CategoryTVComponent) {
       
-      const apiUrl = 'https://api.themoviedb.org/3/movie/' + this.id + '?api_key=' + this.API_KEY + '&append_to_response=videos';
+      const apiUrl = `https://api.themoviedb.org/3/tv/${this.id}?api_key=${this.API_KEY}&append_to_response=videos`;
 
       this.http.get(apiUrl).subscribe(
         (data: any) => {

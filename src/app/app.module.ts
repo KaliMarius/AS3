@@ -11,6 +11,8 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 import { SearchResultsComponent } from './search-result/search-result.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { TrendsPageComponent } from './trends-page/trends-page.component';
+import { CategoryMoviesComponent } from './category-movies/category-movies.component';
+import { CategoryTVComponent } from './category-tv/category-tv.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { TrendsPageComponent } from './trends-page/trends-page.component';
     MovieCardComponent,
     SearchResultsComponent,
     MainPageComponent,
-    TrendsPageComponent
+    TrendsPageComponent,
+    CategoryMoviesComponent,
+    CategoryTVComponent
   ],
   imports: [
     BrowserModule,
