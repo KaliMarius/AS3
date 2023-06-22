@@ -6,119 +6,124 @@ header {
     height: 100px;
     z-index: 998;
     background-image: linear-gradient(to bottom, #080808 60%, transparent 100%);
-}
-
-header .row {   /*bootstrap reihe header*/
-    position: relative;
-    width: auto;
-    padding: 50px 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .column-header {
-    position: fixed;
-    margin-top: -20px;
-    left: 50%;
-}
-
-header ul {     /*Liste links*/
+  
+    .row {
+      position: relative;
+      width: auto;
+      padding: 50px 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .column-header {
+      position: fixed;
+      margin-top: -20px;
+      left: 50%;
+    }
+  
+    ul {
     position: fixed;
     display: flex;
     justify-content: center;
     align-items: top;
     transform: translateX(-43%);
-}
 
-header ul li {      /*Listenelemente links*/
-    margin-top: -10px;
-    list-style: none;
-    margin-right: 100px;
-}
+    li {
+      margin-top: -10px;
+      list-style: none;
+      margin-right: 100px;
 
-header ul li a {    /*Text Listenelemente links normal*/
-    color: #FFF;
-    padding: 6px 15px;
-    border-radius: 20px;
-    text-decoration: none;
-}
-
-header ul li a:hover, header ul li a.active {    /*Text Listenelemente links hover*/
-    background: #FFF;
-    font-weight: bold;
-    color: #3b4c4e;
-}
-
-header ul ul {      /*Liste in Liste (Kategorienliste)*/
-    position: absolute;
-    top: 100%;
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
-}
-
-header ul li:hover > ul {    /*Liste in Liste sichtbar machen bei drüber hovern*/
-    display: block;
-    align-items: flex-start;
-    opacity: 1;
-    visibility: visible;
-    position: relative;
-    top: auto;
-    margin-top: 20px;
-}
-
-header ul ul li {       /*Liste in Liste*/
-    position: relative;
-    list-style: none;
-    margin-bottom: 10px;
-    left: 6vw;
-}
-
-header ul ul li a {     /*Listenelemente in Liste*/
-    color: #999;
-    border-radius: 10px;
-    font-size: small;
-}
-
-header ul ul li a:hover {       /*Listenelemente in Liste bei drüber hovern*/
-    background: transparent;
-    font-weight: normal;
-    font-size: smaller;
-    color: #FFF;
-}
-
-header input[type="text"] {     /*Suchfeld*/
-    margin-top: -10px;
-    border: none;
-    opacity: 0.2;
-    padding: 10px;
-    width: 150px;
-    border-radius: 30px;
-}
-
-header input[type="text"]:hover {   /*Suchfeld bei drüber hovern*/
-    opacity: 0.9;
-}
-
-header input[type="text"]:focus {
-    opacity: 0.9;
-}
-
-button {
-    visibility: hidden;
-}
-
-@media (max-width: 800px) {
-    
-    header ul {     /*Liste links*/
+      &:first-child {
+        margin-left: -70px;
+      }
+  
+        a {
+          color: #fff;
+          padding: 6px 15px;
+          border-radius: 20px;
+          text-decoration: none;
+  
+          &:hover,
+          &.active {
+            background: #fff;
+            font-weight: bold;
+            color: #3b4c4e;
+          }
+        }
+  
+        ul {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          opacity: 0;
+          visibility: hidden;
+  
+          li {
+            position: relative;
+            list-style: none;
+            margin-bottom: 10px;
+            left: 6vw;
+  
+            a {
+              color: #999;
+              border-radius: 10px;
+              font-size: small;
+  
+              &:hover {
+                background: transparent;
+                font-weight: normal;
+                font-size: smaller;
+                color: #fff;
+              }
+            }
+          }
+        }
+  
+        &:hover > ul {
+          display: block;
+          align-items: flex-start;
+          opacity: 1;
+          visibility: visible;
+          position: relative;
+          top: auto;
+          margin-top: 20px;
+        }
+      }
+    }
+  
+    input[type="text"] {
+      margin-top: -10px;
+      border: none;
+      opacity: 0.2;
+      padding: 10px;
+      width: 150px;
+      border-radius: 30px;
+  
+      &:hover,
+      &:focus {
+        opacity: 0.9;
+      }
+    }
+  
+    button {
+      visibility: hidden;
+    }
+  
+    @media (max-width: 800px) {
+      ul {
         transform: translateX(-50%);
         margin-left: -15px;
+  
+        li {
+          list-style: none;
+          margin-right: 1vw;
+          
+          &:first-child {
+            margin-left: -15px;
+          }
+        }
+      }
     }
-
-    header ul li {      /*Listenelemente links*/
-        list-style: none;
-        margin-right: 1vw;
-    }
-
-}
+  }
+  
