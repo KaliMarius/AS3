@@ -34,24 +34,35 @@ export class SearchResultsComponent implements OnInit {
     this.http.get(apiRequest).subscribe(
       (data: any) => {
         const results = data.results;
-
-        console.log(results); //TODO: Für funktionierende Links zu videos noch extra api abfrage mit der ID vom Film machen
-        
+                
         for (var movie of results) {
           if (movie.poster_path != null) {
 
-            var videoLink = '#';
-            if (movie.video != false) videoLink = movie.video.results[0].key;
-            var note = '';
-            videoLink == '#' ? note = this.errMsg : skip;
+            var id = movie.id;
 
-            var newMovie: Movie = {
-              imageUrl: `https://image.tmdb.org/t/p/original${movie.poster_path}`,
-              href: videoLink,
-              notification: note
-            };
-            this.movies.push(newMovie);
-          }
+            // get more data for each movie including video link
+            const movieAPILink = `https://api.themoviedb.org/3/movie/${id}?&append_to_response=videos&api_key=${this.API_KEY}`;
+            
+            this.http.get(movieAPILink).subscribe(
+              (movieData: any) => {
+                
+                var videoLink = '#';
+                movieData.videos.results.length > 0 ? videoLink = `https://www.youtube.com/watch?v=${movieData.videos.results[0].key}` : skip;
+                var note = '';
+                videoLink == '#' ? note = this.errMsg : skip;
+
+                var newMovie: Movie = {
+                  imageUrl: `https://image.tmdb.org/t/p/original${movieData.poster_path}`,
+                  href: videoLink,
+                  notification: note
+                };
+                this.movies.push(newMovie);
+              },
+              error => {
+                console.log('Fehler beim Laden des Link:', error);
+              }
+            );
+          }          
         }
       },
       error => {

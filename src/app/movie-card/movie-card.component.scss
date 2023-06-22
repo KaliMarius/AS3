@@ -1,19 +1,19 @@
 .col-sm-6, .col-lg-3 {
     margin-top: 10px;
     margin-bottom: 10px;
-    display: inline-block;
+    // display: grid;
 }
 
-.blur {
-    position: relative;
-    z-index: -1;
-    transform: translateY(-100%); 
-    filter: blur(16px);
-    filter: brightness(4);
-    -webkit-filter: blur(16px);
-    margin-bottom: -55%;
-}
+// .blur {
+//     position: relative;
+//     z-index: -1;
+//     transform: translateY(-100%); 
+//     filter: blur(16px);
+//     filter: brightness(4);
+//     -webkit-filter: blur(16px);
+//     margin-bottom: -55%;
+// }
 
 a {
-    display: contents;
+    display: inline-flex;
 }
